@@ -1,6 +1,6 @@
 import re
 
-file = open("regex_sum_42.txt")
+# file = open("regex_sum_42.txt")
 file = open("regex_sum_197949.txt")
 
 vlist = []
