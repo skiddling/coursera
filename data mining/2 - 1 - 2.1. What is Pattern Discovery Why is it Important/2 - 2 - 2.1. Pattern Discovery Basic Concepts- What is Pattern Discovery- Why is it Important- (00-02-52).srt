@@ -1,0 +1,176 @@
+1
+00:00:00,300 --> 00:00:06,580
+[SOUND].
+
+2
+00:00:06,580 --> 00:00:07,380
+Hi.
+
+3
+00:00:07,380 --> 00:00:12,880
+In this lecture we're going to introduce
+some basic concepts of pattern discovery.
+
+4
+00:00:14,400 --> 00:00:18,029
+We are going to discuss these
+three issues in three sessions.
+
+5
+00:00:19,110 --> 00:00:23,240
+The first session we are going to discuss,
+what is pattern discovery?
+
+6
+00:00:23,240 --> 00:00:25,690
+Why it is important.
+
+7
+00:00:25,690 --> 00:00:28,970
+To know why pattern
+discovery is important,
+
+8
+00:00:28,970 --> 00:00:32,110
+we need to know what are the patterns,
+okay?
+
+9
+00:00:32,110 --> 00:00:37,011
+Patterns actually are a set of items,
+subsequences or
+
+10
+00:00:37,011 --> 00:00:42,560
+substructures that occur
+frequently together in data sets.
+
+11
+00:00:42,560 --> 00:00:45,600
+We call these strongly correlated.
+
+12
+00:00:45,600 --> 00:00:50,770
+Patterns usually represent intrinsic and
+important properties of data.
+
+13
+00:00:50,770 --> 00:00:54,150
+That's why pattern discovery is a process.
+
+14
+00:00:54,150 --> 00:00:59,600
+Try to uncover, try to mine
+patterns from massive data sets.
+
+15
+00:00:59,600 --> 00:01:01,850
+It has many interesting applications.
+
+16
+00:01:01,850 --> 00:01:04,970
+For example, in transaction database,
+
+17
+00:01:04,970 --> 00:01:10,260
+you may want to find what kind of
+products are often purchased together.
+
+18
+00:01:10,260 --> 00:01:13,760
+Then you can do some targeted marketing.
+
+19
+00:01:13,760 --> 00:01:20,846
+And for customers, you may want to study,
+if a person buying an iPad,
+
+20
+00:01:20,846 --> 00:01:27,391
+what are likely other products he or
+she is going to buy in the future?
+
+21
+00:01:27,391 --> 00:01:28,300
+Okay.
+
+22
+00:01:28,300 --> 00:01:32,520
+And even for
+software engineering you may want,
+
+23
+00:01:32,520 --> 00:01:36,826
+based on the code segment analysis,
+try to find copy-and-paste bugs.
+
+24
+00:01:37,850 --> 00:01:39,440
+For text analysis,
+
+25
+00:01:39,440 --> 00:01:44,630
+you may want to see what are likely
+the keywords were form phrases.
+
+26
+00:01:44,630 --> 00:01:47,540
+Finding phrases may need
+pattern mining as well.
+
+27
+00:01:49,460 --> 00:01:54,780
+So we can see pattern discovery
+could be very important because it,
+
+28
+00:01:54,780 --> 00:01:59,420
+it is uncovered inherent
+regularities in the data sets.
+
+29
+00:01:59,420 --> 00:02:01,840
+It forms the foundation for many things.
+
+30
+00:02:01,840 --> 00:02:06,050
+For example, associating
+correlation causality analysis,
+
+31
+00:02:06,050 --> 00:02:09,060
+mining sequential structure patterns,
+
+32
+00:02:09,060 --> 00:02:15,180
+pattern analysis in spatiotemporal data,
+multimedia data and stream data.
+
+33
+00:02:15,180 --> 00:02:20,930
+Even for classification, if we use
+discriminative pattern-based analysis,
+
+34
+00:02:20,930 --> 00:02:23,550
+the classification could be more accurate.
+
+35
+00:02:24,600 --> 00:02:29,790
+And for cluster analysis,
+pattern-based subspace clustering could
+
+36
+00:02:29,790 --> 00:02:33,930
+be an important direction for
+cluster analysis.
+
+37
+00:02:33,930 --> 00:02:39,810
+So there's no wonder why we want
+to study pattern discovery.
+
+38
+00:02:39,810 --> 00:02:49,810
+[MUSIC]
+

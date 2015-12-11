@@ -1,0 +1,434 @@
+1
+00:00:00,025 --> 00:00:06,000
+[NOISE] Now,
+we're going to introduce another set
+
+2
+00:00:06,000 --> 00:00:13,695
+of importance concepts,
+Closed patterns and Max-patterns.
+
+3
+00:00:13,695 --> 00:00:18,330
+Actually, in association rule mining,
+or frequent pattern mining.
+
+4
+00:00:18,330 --> 00:00:24,730
+There's one challenge, is in many cases we
+may generate too many frequent patterns.
+
+5
+00:00:24,730 --> 00:00:30,240
+Usually a long pattern will contain
+a combinatorial number of sub-patterns.
+
+6
+00:00:30,240 --> 00:00:35,330
+Just give you one simple example,
+suppose we get a transaction database,
+
+7
+00:00:35,330 --> 00:00:37,970
+it contains only two transactions.
+
+8
+00:00:37,970 --> 00:00:40,730
+T sub-1 and T sub-2.
+
+9
+00:00:40,730 --> 00:00:46,990
+For T sub-1, it contains only 50 items,
+a sub-1 to a sub-50.
+
+10
+00:00:46,990 --> 00:00:55,210
+For transactions in T2, it contains
+100 itemsets, a sub-1 up to a sub-100.
+
+11
+00:00:55,210 --> 00:00:59,170
+Suppose we set the minimum support,
+
+12
+00:00:59,170 --> 00:01:03,810
+the absolute minimum support is only 1,
+that means everything is frequent.
+
+13
+00:01:03,810 --> 00:01:08,070
+Then how many frequent items it contains?
+
+14
+00:01:08,070 --> 00:01:08,650
+Let's have a try.
+
+15
+00:01:08,650 --> 00:01:09,150
+Okay.
+
+16
+00:01:10,300 --> 00:01:16,770
+So, for frequent 1-itemsets,
+we have a1 occurs twice,
+
+17
+00:01:16,770 --> 00:01:20,500
+a2 occurs twice, up to a50 occurs twice.
+
+18
+00:01:20,500 --> 00:01:25,410
+Then a51 occurs only once,
+up to a100 occurs only once.
+
+19
+00:01:26,930 --> 00:01:28,832
+Then, what about 2-itemsets?
+
+20
+00:01:28,832 --> 00:01:35,156
+Actually, 2-itemsets is all
+the possible combinations of a1 to a2,
+
+21
+00:01:35,156 --> 00:01:38,220
+a1 to a3, up to a99 to a100.
+
+22
+00:01:38,220 --> 00:01:42,210
+You probably, can see
+
+23
+00:01:42,210 --> 00:01:47,520
+some are support two,
+some support only one.
+
+24
+00:01:48,890 --> 00:01:53,874
+Then, we can go on and
+on, up to 99-itemsets,
+
+25
+00:01:53,874 --> 00:01:59,860
+we [INAUDIBLE] get a1 to a sub-99,
+the support is one.
+
+26
+00:01:59,860 --> 00:02:01,110
+It can chop one by one.
+
+27
+00:02:01,110 --> 00:02:07,490
+So, finally, you get a2,
+a3 to a sub-100 support is 1.
+
+28
+00:02:07,490 --> 00:02:12,030
+Finally, we'll get a 100-itemset,
+where support is only 1.
+
+29
+00:02:12,030 --> 00:02:18,010
+If we add all of these together,
+that means 100 choose 1, 100 choose 2,
+
+30
+00:02:18,010 --> 00:02:24,770
+up to 100 choose 100 we'll get a huge
+number 2 to the power of 100 minus 1.
+
+31
+00:02:24,770 --> 00:02:27,560
+That many sub-patterns.
+
+32
+00:02:27,560 --> 00:02:34,150
+This is a huge set for any computer,
+it's too huge to compute or store.
+
+33
+00:02:36,770 --> 00:02:39,635
+Then how can we handle such a challenge?
+
+34
+00:02:39,635 --> 00:02:45,470
+Why interesting proposal is introduce
+the concept of closed patterns?
+
+35
+00:02:46,740 --> 00:02:48,450
+What is closed pattern?
+
+36
+00:02:48,450 --> 00:02:52,646
+We say, X is closed if X is frequent, and
+
+37
+00:02:52,646 --> 00:02:59,250
+there exist no super-pattern
+Y with the same support as X.
+
+38
+00:02:59,250 --> 00:03:01,570
+Just give you a simple example.
+
+39
+00:03:01,570 --> 00:03:05,390
+We look at the same transaction database,
+like T1 and T2.
+
+40
+00:03:05,390 --> 00:03:07,240
+We still say is minimum support is 1.
+
+41
+00:03:08,250 --> 00:03:12,040
+So, how many closed patterns
+does this transaction contain?
+
+42
+00:03:12,040 --> 00:03:17,630
+So, instead, of 2 to power 100 minus 1,
+we actually find only 2.
+
+43
+00:03:19,260 --> 00:03:22,500
+A1, to a50 support is 2.
+
+44
+00:03:22,500 --> 00:03:24,600
+A1 to a100 support is 1.
+
+45
+00:03:25,710 --> 00:03:28,000
+You may say, wait, you may lose something.
+
+46
+00:03:28,000 --> 00:03:31,790
+Let's look at it, do you know a1 to a49?
+
+47
+00:03:31,790 --> 00:03:35,540
+Actually, it's contain here,
+it must be support of 2.
+
+48
+00:03:37,010 --> 00:03:39,460
+Do you know a1 to a51?
+
+49
+00:03:39,460 --> 00:03:41,480
+it contains here, it support must be 1.
+
+50
+00:03:41,480 --> 00:03:45,570
+So you can see, you do not lose
+anything because your guard
+
+51
+00:03:46,570 --> 00:03:50,900
+the concrete patterns,
+which are the maximum close to 1.
+
+52
+00:03:50,900 --> 00:03:56,440
+In the meantime, you do not lose the
+support information for any sub-patterns.
+
+53
+00:03:56,440 --> 00:03:57,840
+So to that extent,
+
+54
+00:03:57,840 --> 00:04:02,930
+we can say closed pattern in a lossless
+compression of frequent patterns.
+
+55
+00:04:02,930 --> 00:04:08,150
+It does reduce the number of patterns but
+does not lose the support information.
+
+56
+00:04:08,150 --> 00:04:13,560
+For example, you will still be
+able to say, a sub-2 to sub-40.
+
+57
+00:04:13,560 --> 00:04:19,300
+The support is 2, a5, a51,
+this item said support is 1.
+
+58
+00:04:19,300 --> 00:04:25,597
+Then let's look at another possible
+compression called max-patterns.
+
+59
+00:04:25,597 --> 00:04:29,230
+Max-pattern, the definition
+is very similar,
+
+60
+00:04:29,230 --> 00:04:33,120
+except it does not carry
+the support anymore.
+
+61
+00:04:33,120 --> 00:04:39,600
+That means X is a max-pattern,
+if X is frequent and
+
+62
+00:04:39,600 --> 00:04:43,110
+there exists no frequent super pattern Y,
+
+63
+00:04:43,110 --> 00:04:48,569
+which is a super pattern of X, and
+we don't care to support anymore.
+
+64
+00:04:49,970 --> 00:04:52,780
+So the difference from
+the close-pattern is we do
+
+65
+00:04:52,780 --> 00:04:58,120
+not care the real support of
+the sub-patterns of a max-pattern.
+
+66
+00:04:58,120 --> 00:05:00,710
+Let's look at the transaction
+database like this.
+
+67
+00:05:00,710 --> 00:05:01,210
+Okay.
+
+68
+00:05:02,280 --> 00:05:04,590
+We still say, minimum support is 1,
+
+69
+00:05:04,590 --> 00:05:09,670
+then how many max-patterns does
+this transaction database contain?
+
+70
+00:05:09,670 --> 00:05:10,860
+Okay.
+
+71
+00:05:10,860 --> 00:05:12,800
+So, we will find only 1.
+
+72
+00:05:12,800 --> 00:05:18,780
+The reason is,
+even a sub-1 to a sub-50 the support is 2.
+
+73
+00:05:18,780 --> 00:05:21,920
+But, remember we do not
+care support any more.
+
+74
+00:05:21,920 --> 00:05:27,370
+For this a1 to 1 sub-50,
+it does exist a super-pattern like this.
+
+75
+00:05:27,370 --> 00:05:28,040
+Okay.
+
+76
+00:05:28,040 --> 00:05:33,020
+Which is also frequent to that
+extent is the further compression.
+
+77
+00:05:33,020 --> 00:05:38,736
+So, you only get a one pattern,
+but it is a lossy compression
+
+78
+00:05:38,736 --> 00:05:44,244
+because we only know a sub-1
+to a sub-40 is frequent.
+
+79
+00:05:44,244 --> 00:05:51,450
+But we will not know the real support
+of a sub-1 to a sub-40 and many more.
+
+80
+00:05:51,450 --> 00:05:58,252
+So, you do lose a support information
+of many frequent itemsets.
+
+81
+00:05:58,252 --> 00:05:59,010
+Okay.
+
+82
+00:05:59,010 --> 00:06:01,660
+To that extent in many applications,
+
+83
+00:06:01,660 --> 00:06:06,912
+mining close-patterns is more
+desirable than mining max-patterns.
+
+84
+00:06:06,912 --> 00:06:10,640
+We are going to see this
+in our future discussions.
+
+85
+00:06:10,640 --> 00:06:11,500
+Okay.
+
+86
+00:06:11,500 --> 00:06:17,390
+So for this lecture, we mainly,
+give you four recommended readings.
+
+87
+00:06:17,390 --> 00:06:18,690
+The first one actually,
+
+88
+00:06:18,690 --> 00:06:22,810
+is a first time introduced frequent
+patterns and association rules.
+
+89
+00:06:24,260 --> 00:06:29,550
+The second one,
+is the first time introduced max-patterns.
+
+90
+00:06:29,550 --> 00:06:35,030
+The third one, is the first time
+introduce the closed-patterns.
+
+91
+00:06:35,030 --> 00:06:40,560
+And the fourth one, actually is an
+overview, give you overall, you know, this
+
+92
+00:06:40,560 --> 00:06:46,900
+field, how the frequent pattern mining
+came, and how it evolves up to this stage?
+
+93
+00:06:48,140 --> 00:06:49,172
+Thank you.
+
+94
+00:06:49,172 --> 00:06:59,172
+[MUSIC]
+

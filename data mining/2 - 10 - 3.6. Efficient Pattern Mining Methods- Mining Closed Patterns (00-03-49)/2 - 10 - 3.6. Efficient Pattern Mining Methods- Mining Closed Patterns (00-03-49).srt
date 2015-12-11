@@ -1,0 +1,244 @@
+1
+00:00:00,025 --> 00:00:07,530
+[SOUND].
+
+2
+00:00:07,530 --> 00:00:10,971
+>> Hi, in this final session
+of this lecture we're going to
+
+3
+00:00:10,971 --> 00:00:13,680
+discuss mining closed patterns.
+
+4
+00:00:13,680 --> 00:00:19,150
+As we already know before,
+closed pattern is a compact form but
+
+5
+00:00:19,150 --> 00:00:23,480
+it's a lot less compression
+of frequent patterns.
+
+6
+00:00:23,480 --> 00:00:28,910
+So mining this closed item sets
+is very interesting and useful.
+
+7
+00:00:30,540 --> 00:00:34,680
+And with pattern growth approach
+there is one interesting method,
+
+8
+00:00:34,680 --> 00:00:36,830
+would be better to call it CLOSET+.
+
+9
+00:00:36,830 --> 00:00:41,320
+Let's look at this CLOSET+,
+how to develop efficient,
+
+10
+00:00:41,320 --> 00:00:44,200
+direct mining of closed item sets.
+
+11
+00:00:44,200 --> 00:00:46,620
+So let's look at this
+transaction database,
+
+12
+00:00:46,620 --> 00:00:51,580
+it contains only four transactions and
+these are the items in these transactions.
+
+13
+00:00:51,580 --> 00:00:53,562
+Suppose a minimum support is two,
+
+14
+00:00:53,562 --> 00:00:58,410
+we would be able to get these
+as frequent items sets.
+
+15
+00:00:58,410 --> 00:01:04,090
+And based on this we can work up
+the F-list, like the following, okay?
+
+16
+00:01:04,090 --> 00:01:05,052
+Now we look at,
+
+17
+00:01:05,052 --> 00:01:10,280
+you know, an interesting method of
+develop called itemset merging, okay?
+
+18
+00:01:10,280 --> 00:01:14,670
+The philosophy can be represented
+using this example, okay?
+
+19
+00:01:14,670 --> 00:01:16,620
+Let's look at these project database.
+
+20
+00:01:17,900 --> 00:01:24,671
+For these project database, we will
+have acf, ef, and acf based on this.
+
+21
+00:01:24,671 --> 00:01:31,856
+You can see this project database will get
+a-c-d-e-f and acf, but the interesting
+
+22
+00:01:31,856 --> 00:01:37,870
+thing is acf happens in every
+transaction projecting in this database.
+
+23
+00:01:37,870 --> 00:01:40,700
+Acf have the same support as d.
+
+24
+00:01:40,700 --> 00:01:44,650
+In that case, we can grab acf out
+
+25
+00:01:44,650 --> 00:01:50,360
+from acfd project database,
+which contains only one item, e.
+
+26
+00:01:50,360 --> 00:01:51,930
+It is not frequent.
+
+27
+00:01:51,930 --> 00:01:57,073
+Therefore, we will be able to get acfd,
+support is two, it's the final result.
+
+28
+00:01:57,073 --> 00:02:01,324
+This method itemset merging.
+
+29
+00:02:01,324 --> 00:02:07,040
+Simply said, says,
+if Y appears in every occurrence of X,
+
+30
+00:02:07,040 --> 00:02:09,320
+then items in Y is merged with X.
+
+31
+00:02:10,590 --> 00:02:13,911
+Now the X is d, and the Y is acf.
+
+32
+00:02:13,911 --> 00:02:20,390
+Acf occurs in every occurrence of X,
+which is d.
+
+33
+00:02:20,390 --> 00:02:26,400
+Then we will merge acfd together to
+form a more, you know, compressed form.
+
+34
+00:02:26,400 --> 00:02:30,100
+That means you can mine
+that all these immediately.
+
+35
+00:02:30,100 --> 00:02:31,600
+Okay, so this is more efficient.
+
+36
+00:02:32,680 --> 00:02:36,350
+Actually there are many
+tricks developed in CLOSET+.
+
+37
+00:02:36,350 --> 00:02:38,773
+For example, hybrid tree projection.
+
+38
+00:02:38,773 --> 00:02:44,528
+We use bottom-up physical tree-projection,
+top-down pseudo tree-projection,
+
+39
+00:02:44,528 --> 00:02:47,948
+there's a one technical,
+sub-itemset pruning,
+
+40
+00:02:47,948 --> 00:02:51,730
+itemset skipping,
+efficient subset testing.
+
+41
+00:02:51,730 --> 00:02:54,010
+But I'm not going to get into the details.
+
+42
+00:02:54,010 --> 00:02:56,650
+For details, you can read this paper.
+
+43
+00:02:56,650 --> 00:02:57,420
+Okay.
+
+44
+00:02:57,420 --> 00:03:01,460
+So finally I'll summarize
+the recommended readings.
+
+45
+00:03:01,460 --> 00:03:06,926
+These are all classical papers
+you know algorithm, you know,
+
+46
+00:03:06,926 --> 00:03:13,990
+algorithm mining and the, you know, the
+further improvement of algorithm mining.
+
+47
+00:03:13,990 --> 00:03:18,493
+Then we have vertical methods,
+we have FP-growth methods and
+
+48
+00:03:18,493 --> 00:03:20,314
+we have CLOSET+ methods.
+
+49
+00:03:20,314 --> 00:03:24,601
+So finally there's an interesting
+survey article called
+
+50
+00:03:24,601 --> 00:03:29,062
+Frequent Pattern Mining Algorithms
+which contain many more
+
+51
+00:03:29,062 --> 00:03:32,590
+algorithms covered in this lecture.
+
+52
+00:03:32,590 --> 00:03:36,970
+If you have interest in,
+go ahead and read this chapter.
+
+53
+00:03:36,970 --> 00:03:46,970
+[MUSIC]
+

@@ -1,0 +1,221 @@
+1
+00:00:00,231 --> 00:00:03,528
+[SOUND].
+
+2
+00:00:07,104 --> 00:00:12,045
+Now, we are going to look at the another
+interesting pattern mining method,
+
+3
+00:00:12,045 --> 00:00:16,160
+is Mining Frequent Pattern by
+Exploring Vertical Data Format.
+
+4
+00:00:18,570 --> 00:00:25,090
+This is method is called ECLAT, or
+Equivalence Class Transformation method.
+
+5
+00:00:25,090 --> 00:00:31,463
+The general philosophy look like this,
+okay, in original transaction
+
+6
+00:00:31,463 --> 00:00:37,313
+database is Horizontal Data Format
+in the sense that in every row,
+
+7
+00:00:37,313 --> 00:00:43,560
+you could connect the ids and
+a set of items in this Itemset entry.
+
+8
+00:00:43,560 --> 00:00:47,780
+Then you can transform this
+Horizontal Data Format
+
+9
+00:00:47,780 --> 00:00:50,540
+to Vertical Data Format like this.
+
+10
+00:00:50,540 --> 00:00:55,368
+For every Item a,
+you will see which connection ids it,
+
+11
+00:00:55,368 --> 00:00:58,260
+a social with this as Item A.
+
+12
+00:00:58,260 --> 00:01:02,110
+That means A bought you
+which transactions.
+
+13
+00:01:02,110 --> 00:01:03,530
+What's the benefit of this?
+
+14
+00:01:03,530 --> 00:01:09,650
+The first thing is you transform
+the Itemset into Tid-Lists.
+
+15
+00:01:09,650 --> 00:01:12,890
+The total size is approximate same.
+
+16
+00:01:12,890 --> 00:01:18,610
+If every entry, or every id they
+have the similar number of fives.
+
+17
+00:01:18,610 --> 00:01:23,570
+But the way to compute this would
+be different with this Tid-Lists.
+
+18
+00:01:23,570 --> 00:01:31,150
+For example, if you say what is
+Tid-Lists of e, you get 10, 20, and 30.
+
+19
+00:01:31,150 --> 00:01:35,290
+What is Tid-Lists of a,
+you get a 10 and 20.
+
+20
+00:01:35,290 --> 00:01:37,410
+Then how did they arrive ae?
+
+21
+00:01:37,410 --> 00:01:39,170
+You just intersect them together.
+
+22
+00:01:39,170 --> 00:01:45,050
+You can see, you intersect this set
+with this set, intersect two Tid-Lists.
+
+23
+00:01:45,050 --> 00:01:51,120
+You derive this,
+the Tid-Lists of these ae, this Itemset.
+
+24
+00:01:51,120 --> 00:01:56,310
+If this one contain sufficient number of
+transactions, that means it's frequent,
+
+25
+00:01:56,310 --> 00:02:00,751
+like two then ae were be frequent.
+
+26
+00:02:00,751 --> 00:02:05,690
+If this one's infrequent then
+you don't need ae to go further,
+
+27
+00:02:05,690 --> 00:02:08,280
+that's a similar thing as principal.
+
+28
+00:02:08,280 --> 00:02:12,425
+Then the properties of Tid-Lists
+basically say If these two
+
+29
+00:02:12,425 --> 00:02:18,280
+Tid-Lists is equivalent that means they
+have the same set of transactions.
+
+30
+00:02:18,280 --> 00:02:22,800
+If this one is the subset of the other
+one, that simply says the transaction
+
+31
+00:02:22,800 --> 00:02:28,800
+containing X must always containing Y
+because of this one's, this one's subset.
+
+32
+00:02:28,800 --> 00:02:34,610
+So you probably can see, if we try
+to derive frequent patterns based on
+
+33
+00:02:34,610 --> 00:02:40,710
+these vertical intersection, we just need
+to see the size of this connections list.
+
+34
+00:02:40,710 --> 00:02:45,310
+But there's one interesting method
+called Diffset to accelerate the mining.
+
+35
+00:02:45,310 --> 00:02:49,120
+The reason is that when you get a very
+large number of connections, this,
+
+36
+00:02:49,120 --> 00:02:54,100
+each item may be associated
+with a very long Tid-Lists.
+
+37
+00:02:54,100 --> 00:02:59,370
+Then their intersection,
+like this e and the ce,
+
+38
+00:02:59,370 --> 00:03:04,400
+their intersection could be small,
+but their difference could be small.
+
+39
+00:03:04,400 --> 00:03:08,250
+So, you, you look at the,
+the intersection's large,
+
+40
+00:03:08,250 --> 00:03:10,684
+the difference could be small.
+
+41
+00:03:10,684 --> 00:03:15,090
+For example, you intersect these
+two intersections, 10 and 20.
+
+42
+00:03:15,090 --> 00:03:16,960
+But the difference is only 1.
+
+43
+00:03:16,960 --> 00:03:19,330
+So you only keep this,
+
+44
+00:03:19,330 --> 00:03:25,240
+you don't have to keep tce that
+may save a lot of space, okay.
+
+45
+00:03:25,240 --> 00:03:26,780
+This is the general idea.
+
+46
+00:03:26,780 --> 00:03:31,540
+Using Diffset you can further
+improve this efficiency.
+
+47
+00:03:31,540 --> 00:03:41,540
+[MUSIC]
+
